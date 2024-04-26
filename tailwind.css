@@ -1,0 +1,335 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+:root {
+  --cor-primaria: #2af8c5; 
+  --cor-secundaria: #a6ff00;
+  --cor-terciaria: #6d6df7;
+  --cor-quartenaria: #3e81f6;
+  --cor-texto-primario: #1c1c1c;
+  --cor-texto-secundario:#212529;
+  --tamanho-titulo: 700;
+  --tamanho-subtitulo: 400;
+  --tamanho-comum: 200;
+  --margem-geral:5%;
+}
+#corpo {
+  font-family: 'Russo One', sans-serif;
+  margin: 0; /* Remove margens padrão para evitar espaçamento extra */
+  padding: 0; /* Remove preenchimento padrão para evitar espaçamento extra */
+  box-sizing: border-box; /* Inclui borda e preenchimento no cálculo da largura */
+  background-image: url('/imagens/bg.png');
+  background-repeat: no-repeat; /* Impede a repetição do background */
+  background-color:#fcf5eb;
+}
+
+
+
+
+
+  
+  @keyframes colorChange {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  #sessaoSuperior {
+    position: fixed;
+    width: 100%;
+    height: 2px;
+    animation: colorChange 4s linear infinite alternate;
+    background-image: linear-gradient(to right, var(--cor-primaria) 50%, var(--cor-secundaria) 50%);
+    background-size: 200% 100%;
+    z-index:999;
+   
+}
+.menu {
+  padding-top:20px;
+  padding-left:var(--margem-geral);
+  padding-right:var(--margem-geral);
+}
+
+
+
+.alinhamentoPadrao{
+
+  padding-left:var(--margem-geral);
+  padding-right:var(--margem-geral);
+
+}
+
+
+.alinhamentoPrincipal {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.alinhamentoPrincipal span {
+  margin: 0;
+  display: inline-block; /* Alterado para inline-block para garantir que ele ocupe todo o espaço disponível */
+  width: 100%; /* Define a largura do span como 100% */
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+.botaoLogin {
+  text-decoration: none; /* Remove o sublinhado padrão do link */
+  font-weight: bold; /* Aplica negrito à fonte */
+  background-color: white; /* Define um background branco com transparência */
+  border: 1px solid var(--cor-terciaria); /* Define uma borda sólida de 2px preta */
+ 
+  padding: 5px 10px; /* Adiciona espaço interno ao redor do texto */
+  transition: all 0.3s ease; /* Adiciona uma transição suave para mudanças */ 
+    border-radius: 30px;
+    font-size: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.botaoLogin:hover {
+  background: #a6ff00 0% 0% no-repeat padding-box;
+  border: 1px solid var(--cor-secundaria); /* Define uma borda sólida de 2px preta */ 
+  box-shadow: 0px 6px 24px var(--cor-secundaria);
+  text-align: center;
+  font: 48px normal bold 20px/24px Ubuntu;
+  letter-spacing: 0px;
+  color: #4d4d4d;
+}
+
+
+  .logotipo{
+    height:35px;
+    
+  }
+  
+  
+  
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  width: 200px;
+  height: 300px;
+  border: 1px solid white;
+  background-color: var(--cor-primaria); /* Usando cor sólida como background */
+  word-wrap: break-word;
+  overflow: hidden;
+  position: relative; /* Para posicionar o overlay */
+  cursor: pointer; /* Mudando o cursor */
+ 
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Efeito de sobreposição */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s; /* Adicionando transição */
+}
+
+.banner:hover::before {
+  opacity: 1; /* Torna o overlay visível no hover */
+}
+             
+
+              .overlay {
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+                  z-index: 9998; /* Ensure it's above the rest of the content */
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+              }
+
+              .suspensa {
+                  background-color: white;
+                  padding: 20px;
+                  max-width: 90%;
+                  width: 560px;
+                  position: relative; /* Para o botão de fechar ficar dentro da div suspensa */
+              }
+
+              .suspensa2 {
+                top: 20px;
+                background-color: white;
+                padding: 20px;
+                max-width: 90%;
+                width: 560px;
+                position: fixed;
+                overflow-y: auto; /* Adiciona barra de rolagem vertical */
+                max-height: 400px; /* Define a altura máxima da div com barra de rolagem */
+            }
+            
+
+              .close-button {
+                  position: absolute;
+                  top: 0px;
+                  right: 0px;
+                  background-color: red; /* Fundo vermelho */
+                  color: white; /* Texto branco */
+                  border: none;
+                  cursor: pointer;
+                  padding: 5px 10px;
+                  width:15%;
+                  border-bottom-left-radius: 15px; /* Raio do canto inferior esquerdo */
+
+                  transition: background-color 0.3s; /* Efeito de transição de cor de fundo */
+              }
+
+              .close-button:hover {
+                  background-color: darkred; /* Cor de fundo mais escura no hover */
+              }
+
+              .video-container {
+                  position: relative;
+                  padding-bottom: 56.25%; /* 16:9 */
+                  height: 0;
+                  overflow: hidden;
+              }
+
+              .video-container iframe {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+              }
+
+              @media (max-width: 768px) {
+                  .suspensa {
+                      width: 90%;
+                  }
+              }
+
+              .text-gradient {
+                background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria)); /* Substitua as cores de exemplo pelas cores desejadas */
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              }
+
+              .text-gradient2 {
+                animation: colorChange 4s linear infinite alternate;
+                  background-image: linear-gradient(to right, var(--cor-primaria) 50%, var(--cor-secundaria) 50%);
+                  background-size: 200% 100%;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              }
+
+              .text-gradient3 {
+                animation: colorChange 4s linear infinite alternate;
+                  background-image: linear-gradient(to right, var(--cor-texto-secundario) 50%, green 50%);
+                  background-size: 200% 100%;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              }
+
+              .text-gradient4 {
+                animation: colorChange 4s linear infinite alternate;
+                  background-image: linear-gradient(to right, var(--cor-texto-secundario) 50%, rgb(241, 249, 239) 50%);
+                  background-size: 200% 100%;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              }
+
+              .background-gradient {
+                background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria)); /* Define o gradiente desejado */
+              }
+
+              .background-gradient2 {
+                  animation: colorChange 4s linear infinite alternate;
+                  background-image: linear-gradient(to right, var(--cor-primaria) 50%, var(--cor-secundaria) 50%);
+                  background-size: 200% 100%;
+                
+              }
+
+
+
+              /* Main.css */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-green {
+  animation: pulse 1s infinite alternate;
+}
+
+.pulse-blue {
+  animation: pulse 1.2s infinite alternate;
+}
+
+.status-ok {
+  color: green;
+}
+
+.status-overdue {
+  color: red;
+}
+
+.status-other {
+  color: yellow;
+}
+/* Adicione as cores desejadas para os ícones */
+.green-flag-icon {
+  color: green;
+}
+
+.red-flag-icon {
+  color: red;
+}
+
+.yellow-flag-icon {
+  color: yellow;
+}
+
+
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-wrapper {
+  width: 100px; /* Defina o tamanho do spinner aqui */
+  height: 100px; /* Defina o tamanho do spinner aqui */
+}
