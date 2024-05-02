@@ -11,11 +11,11 @@ function Main(props) {
     let { priTitulo, secTitulo  } = props;
   
     if(!priTitulo){
-        priTitulo = process.env.INI_TITULO_PRINCIPAL;
+        priTitulo = 'Curso de ';
     }
 
     if(!secTitulo){
-        secTitulo = process.env.TITULO_PRINCIPAL;
+        secTitulo = 'Microsoft Excel';
     }
     const [isLoading, setIsLoading] = useState(false);
   
@@ -37,6 +37,15 @@ function Main(props) {
                                 {priTitulo}<strong className="text-gradient3 text-2xl">{secTitulo}</strong>
                                 </span>
                             </a>
+                        </div>
+                        <div className="text-2xl p-2">
+                        <FontAwesomeIcon icon={faBook} className="text-black ml-1" />
+                            <a href="tutorial">
+                                <span>
+                                 Tutoriais
+                                </span>
+                            </a>
+
                         </div>
                         
                     </div>
