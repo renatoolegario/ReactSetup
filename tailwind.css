@@ -1,20 +1,23 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 /* Importa a fonte Roboto Slab do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
 
+/* Em seguida, importe o Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Definições de variáveis */
 :root {
   --cor-primaria: #2af8c5; 
   --cor-secundaria: #a6ff00;
   --cor-terciaria: #6d6df7;
   --cor-quartenaria: #3e81f6;
   --cor-texto-primario: #1c1c1c;
-  --cor-texto-secundario:#212529;
+  --cor-texto-secundario: #212529;
   --tamanho-titulo: 700;
   --tamanho-subtitulo: 400;
   --tamanho-comum: 200;
-  --margem-geral:5%;
+  --margem-geral: 5%;
 }
 #corpo {
   font-family: 'Roboto Slab', sans-serif;
