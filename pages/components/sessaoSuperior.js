@@ -11,11 +11,11 @@ function Main(props) {
     let { priTitulo, secTitulo  } = props;
   
     if(!priTitulo){
-        priTitulo = 'Curso de ';
+        priTitulo = process.env.NEXT_PUBLIC_INI_TITULO_PRINCIPAL;
     }
 
     if(!secTitulo){
-        secTitulo = 'Microsoft Excel';
+        secTitulo = process.env.NEXT_PUBLIC_TITULO_PRINCIPAL;
     }
     const [isLoading, setIsLoading] = useState(false);
   

@@ -17,6 +17,11 @@ async function query(rota, dados) {
         return {data: ''}
 
     }
+
+    //aqui faz as consultas no banco de dados.
+    //crie uma rota e para consumir informe o nome no request
+
+
   } catch (error) {
     console.error('Erro ao executar a consulta:', error);
     return { error: 'Erro interno do servidor' };
