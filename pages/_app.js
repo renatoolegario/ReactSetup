@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
             j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
             f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','${process.env.GTM}');
+          })(window,document,'script','dataLayer','GTM-KSDSH5TD');
         `}</script>
       </Helmet>
       <Component {...pageProps} />
